@@ -21,10 +21,10 @@ export class HabitService {
   }
 
   createHabit(habitData: any): Observable<any> {
-    // Call the API to create a habit
+    
     const createHabitObservable = this.http.post(this.apiUrl, habitData);
 
-    // After creating the habit, notify observers about the new habit
+    
     createHabitObservable.subscribe(() => {
       this.newHabitSubject.next();
     });
@@ -32,7 +32,7 @@ export class HabitService {
     return createHabitObservable;
   }
 
-  // Your existing methods...
+  
 
   updateHabit(id: number, updatedHabitData: any): Observable<any> {
     const url = `${this.apiUrl}/${id}`;

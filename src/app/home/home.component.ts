@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HabitService } from '../habit.service';
-import { Router } from '@angular/router'; // Import the Router
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
