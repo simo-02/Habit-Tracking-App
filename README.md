@@ -1,7 +1,3 @@
-Certainly! Below is a basic template for a README file for your Angular project. You can customize it based on the specifics of your project.
-
----
-
 # Habit Tracking App
 
 This is a simple Habit Tracking Angular application that allows users to track and manage their habits.
