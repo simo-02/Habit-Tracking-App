@@ -1,14 +1,13 @@
 <div class="container">
   <h2>Habit Tracker</h2>
-  <form>
+  <form [formGroup]="habitForm" (ngSubmit)="createHabit()">
     <label for="habitName">Habit Name:</label>
-    <input type="text" id="habitName" name="habitName" placeholder="Enter habit name" />
+    <input type="text" id="habitName" formControlName="habitName" placeholder="Enter habit name" />
 
     <label for="habitDescription">Habit Description:</label>
-    <textarea id="habitDescription" name="habitDescription" placeholder="Enter habit description"></textarea>
+    <textarea id="habitDescription" formControlName="habitDescription" placeholder="Enter habit description"></textarea>
 
     <button type="submit">Add Habit</button>
-
-    <button type="button" (click)="navigateToHabits()">Go to Habits</button>
   </form>
+  <button type="button" (click)="navigateToHabits()">Go to Habits</button>
 </div>

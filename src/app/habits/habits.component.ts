@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HabitsComponent implements OnInit, OnDestroy {
   habitsFromApi: any[] = [];
+  newHabits: any[] = [];
   private newHabitSubscription: Subscription = new Subscription();
 
   constructor(private habitService: HabitService, private router: Router) {}

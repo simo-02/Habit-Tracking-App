@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HabitService } from '../habit.service';
 import { Router } from '@angular/router';
 
@@ -8,23 +9,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  newHabitName: string = '';
-  newHabitDescription: string = '';
+  habitForm: FormGroup;
 
-  constructor(private habitService: HabitService, private router: Router) {}
+  constructor(private fb: FormBuilder, private habitService: HabitService, private router: Router) {
+    this.habitForm = this.fb.group({
+      habitName: ['', Validators.required],
+      habitDescription: ['', Validators.required],
+    });
+  }
 
   createHabit() {
-    if (this.newHabitName && this.newHabitDescription) {
+    if (this.habitForm.valid) {
       const habitData = {
-        name: this.newHabitName,
-        description: this.newHabitDescription,
+        name: this.habitForm.value.habitName,
+        description: this.habitForm.value.habitDescription,
       };
 
       this.habitService.createHabit(habitData).subscribe(
         (response) => {
           console.log('Habit created successfully:', response);
-          this.newHabitName = '';
-          this.newHabitDescription = '';
+          this.habitForm.reset();
         },
         (error) => {
           console.error('Error creating habit:', error);
@@ -35,7 +39,6 @@ export class HomeComponent {
     }
   }
 
-  
   navigateToHabits() {
     this.router.navigate(['/habits']);
   }
