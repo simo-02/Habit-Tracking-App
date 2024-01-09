@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Your Habits</h2>
+  
+  
+  <div *ngIf="habitsFromApi.length > 0">
+    <h3>Habits from API:</h3>
+    <ul>
+      <li *ngFor="let habit of habitsFromApi">{{ habit.name }}</li>
+    </ul>
+  </div>
+
+  
+  <div *ngIf="newHabits.length > 0">
+    <h3>Newly Added Habits:</h3>
+    <ul>
+      <li *ngFor="let habit of newHabits">{{ habit.name }}</li>
+    </ul>
+  </div>
+</div>
+
+<button type="button" (click)="navigateToHome()">Go Back to Home</button>
