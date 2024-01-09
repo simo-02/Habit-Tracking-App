@@ -1,27 +1,98 @@
-# HabitTrackingApp
+Certainly! Below is a basic template for a README file for your Angular project. You can customize it based on the specifics of your project.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+---
 
-## Development server
+# Habit Tracking App
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This is a simple Habit Tracking Angular application that allows users to track and manage their habits.
 
-## Code scaffolding
+## Table of Contents
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Home Component:** Allows users to add new habits with a name and description.
+- **Habits Component:** Displays a list of habits retrieved from the Habit Tracker API and updates in real-time when new habits are added.
+- **Navigation:** Users can navigate between the Home and Habits components using the Angular Router.
 
-## Running unit tests
+## Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Before you begin, ensure you have the following installed:
 
-## Running end-to-end tests
+- [Node.js](https://nodejs.org/) - JavaScript runtime.
+- [Angular CLI](https://angular.io/cli) - Command Line Interface for Angular.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Getting Started
 
-## Further help
+1. Clone the repository:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/your-username/habit-tracking-app.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd habit-tracking-app
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   ng serve
+   ```
+
+   The app will be available at `http://localhost:4200/`.
+
+## Usage
+
+1. Open your web browser and navigate to `http://localhost:4200/`.
+2. Use the "Add Habit" button in the Home component to create new habits.
+3. Navigate to the Habits component to view the list of habits.
+
+## Folder Structure
+
+The project follows a standard Angular project structure:
+
+```
+habit-tracking-app/
+|-- src/
+|   |-- app/
+|       |-- home/
+|       |   |-- home.component.html
+|       |   |-- home.component.css
+|       |   |-- home.component.ts
+|       |-- habits/
+|       |   |-- habits.component.html
+|       |   |-- habits.component.css
+|       |   |-- habits.component.ts
+|       |-- app-routing.module.ts
+|       |-- app.component.html
+|       |-- app.component.css
+|       |-- app.component.ts
+|       |-- ...
+|-- angular.json
+|-- package.json
+|-- ...
+```
+
+## Technologies Used
+
+- [Angular](https://angular.io/) - Web application framework.
+- [Angular CLI](https://angular.io/cli) - Command Line Interface for Angular.
+- [RxJS](https://rxjs.dev/) - Reactive programming library.
+- [HttpClient](https://angular.io/guide/http) - Angular module for making HTTP requests.
