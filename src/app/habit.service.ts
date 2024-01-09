@@ -8,10 +8,10 @@ import { Observable, Subject } from 'rxjs';
 export class HabitService {
   private apiUrl = 'http://localhost:8080/api/v1/habit';
 
-  // Add a Subject to emit events when a new habit is added
+ 
   private newHabitSubject: Subject<void> = new Subject<void>();
   
-  // Expose the Subject as an observable
+  
   newHabitAdded$: Observable<void> = this.newHabitSubject.asObservable();
 
   constructor(private http: HttpClient) {}
